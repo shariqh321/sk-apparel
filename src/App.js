@@ -1,24 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+
+
+import './App.scss';
+
+import HomePage from './pages/homepage/homepage.component';
+
+const HatsPage = () => (
+  <div>
+    <h1>HATS PAGE </h1>
+  </div>
+);
+const ErrorPage = () => (
+  <div>
+    <h1>Error ! Page not found  </h1>
+  </div>
+);
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+
+      <div>
+        <Routes>
+          <Route path='/' element={<HomePage />} />
+          <Route path='/hats' element={<HatsPage />} />
+          <Route path='*' element={<ErrorPage />} />
+        </Routes>
+      </div>
+
+
   );
 }
 

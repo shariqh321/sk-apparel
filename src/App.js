@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import HomePage from './pages/homepage/homepage.component';
 import ShopPage from './pages/shop/shop.component';
+import Header from './component/header/header.component';
 
 import './App.scss';
 
@@ -42,6 +43,7 @@ function App() {
   return (
 
       <div>
+        <Header/>
         <Routes>
           <Route path='/' element={<HomePage />} />
           <Route path='/hats' element={<HatsPage />} />
@@ -53,7 +55,6 @@ function App() {
           <Route path='*' element={<ErrorPage />} />
         </Routes>
       </div>
-
 
   );
 }
